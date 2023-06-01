@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Docs</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: row;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      .sidebar {
+        flex: 0 0 250px;
+        background-color: #fff;
+        padding: 20px;
+      }
+      .content {
+        flex: 1;
+        padding: 20px;
+      }
+      .redoc-container {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+    <script src=""></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h3>Services</h3>
+      <ul class="sidebar-list"></ul>
+    </div>
+    <div class="content">
+      <div class="redoc-container"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", ()=>{
+        var sidebarList = document.querySelector(".sidebar-list");
+        var redocContainer = document.querySelector(".redoc-container");
+
+        var services = [
+          {
+            title: "Service 1",
+            summary: "Summary for service 1",
+            url: "SERVICE_1_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+          {
+            title: "Service 2",
+            summary: "Summary for service 2",
+            url: "SERVICE_2_URL",
+          },
+        ];
+
+        services.forEach((service)=>{
+          var listItem = document.createElement("li");
+          var link = document.createElement("a");
+          link.href ="#";
+          link.textContent = service.title;
+          link.onclick = ()=>{
+            loadRedocContainer(service.url);
+            return false;
+          };
+          listItem.appendChild(link);
+          sidebarList.appendChild(listItem);
+        });
+
+        function loadRedocContainer(redocUrl){
+          redocContainer.innerHTML = "";
+          Redoc.init(url,{},redocContainer);
+        }
+      });
+    </script>
+  </body>
+</html>
